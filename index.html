@@ -1,6 +1,740 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7 ]><html class="ie6"><![endif]-->
+<!--[if IE 7 ]><html class="ie7"><![endif]-->
+<!--[if IE 8 ]><html class="ie8"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="w3c">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>360学术 - 博观而约取，厚积而薄发</title>
+<meta name="description" content="360学术，汇聚海量中英文学术期刊、论文，为你提供更方便的学术搜索服务。">
+<style>
+html, body {
+	height: 100%;
+	min-width: 960px
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, textarea, input, button,
+	table, fieldset {
+	margin: 0
+}
+
+ul, ol, textarea, input, button, th, td, fieldset {
+	padding: 0
+}
+
+button, textarea, input {
+	font-family: 'Microsoft Yahei';
+	outline: none
+}
+
+textarea {
+	resize: none
+}
+
+button {
+	cursor: pointer
+}
+
+table {
+	border-collapse: collapse
+}
+
+li {
+	list-style: none
+}
+
+img {
+	border: none;
+	display: block;
+	vertical-align: middle
+}
+
+em, i {
+	font-style: normal
+}
+
+body {
+	background: #091025 url(imgs/t019882006d68c0441f.jpg) no-repeat center;
+	background-size: cover;
+	font-family: 'Microsoft Yahei';
+	font-size: 12px
+}
+
+body, a {
+	color: #fff
+}
+
+a {
+	text-decoration: none
+}
+
+input::-ms-clear {
+	display: none
+}
+
+.ac_wrap {
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 2px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 16px;
+	line-height: 32px;
+	overflow-y: hidden;
+	position: absolute;
+	width: 521px !important;
+	z-index: 100
+}
+
+.ac_toolbar {
+	display: none
+}
+
+.ac_bgIframe {
+	height: 2000px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: expression(this.parentNode.offsetWidth);
+	z-index: -1
+}
+
+a:hover {
+	text-decoration: underline
+}
+
+.ac_wrap img {
+	display: inline-block
+}
+
+.ac_wrap li {
+	cursor: pointer;
+	line-height: 32px;
+	padding-left: 14px
+}
+
+.ie7 .ac_wrap, .ie8 .ac_wrap {
+	background: url(imgs/t01568478d851c032fa.png)
+}
+
+.ac_wrap .recommend {
+	background: url(http://p0.qhimg.com/d/inn/758e4b7a/b.png) no-repeat 0 0;
+	display: inline-block;
+	height: 16px;
+	margin: 0 0 2px 5px;
+	_margin: 0 0 0 5px;
+	vertical-align: middle;
+	width: 18px
+}
+
+.ac_wrap .headline-re {
+	display: inline-block;
+	_line-height: 16px;
+	_padding: 7px 0 5px 0
+}
+
+.ac_wrap .official {
+	background-color: #6fb963;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	font: 12px "simsun";
+	margin: 8px 5px 0 1px;
+	padding: 1px 2px 1px 3px;
+	_padding-top: 3px;
+	text-align: center
+}
+
+.ac_wrap .subheading {
+	color: #999;
+	display: inline-block;
+	font: 13px "simsun"
+}
+
+.ac_wrap .headline {
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+	margin-top: -5px;
+	overflow: hidden;
+	padding: 0 0 2px 38px;
+	_padding-top: 7px;
+	white-space: nowrap;
+	width: 453px
+}
+
+.ie6 .ac_wrap li {
+	background: #0f1d3f
+}
+
+.ac_wrap li.hover, .ac_wrap li.selected {
+	background-color: rgba(0, 0, 0, 0.5)
+}
+
+.ac_wrap li.local {
+	color: #77c
+}
+
+.ie7 .ac_wrap li.hover, .ie7 .ac_wrap li.selected, .ie8 .ac_wrap li.hover,
+	.ie8 .ac_wrap li.selected {
+	background: url(imgs/t01568478d851c032fa.png)
+}
+
+.ie6 .ac_wrap li.hover, .ie6 .ac_wrap li.selected {
+	background-color: #000
+}
+
+.ac_wrap li.local span.del {
+	background: url(http://p4.qhimg.com/t0102a1664ae1c9dee0.png) no-repeat
+		-530px -155px;
+	display: none;
+	float: right;
+	height: 0;
+	margin: 8px 10px 0 0;
+	overflow: hidden;
+	padding-top: 14px;
+	width: 14px
+}
+
+.ac_wrap li.selected span.del {
+	display: block
+}
+
+.ac_wrap li.selected span.del:hover {
+	background-position: -550px -155px
+}
+
+.ac_wrap li.selected span.del:active {
+	background-position: -570px -155px
+}
+
+#background, #tmp {
+	left: 0;
+	position: absolute;
+	top: 0
+}
+
+#tmp {
+	top: -400px
+}
+
+#wrap {
+	background: rgba(0, 0, 0, 0);
+	min-height: 100%;
+	min-width: 960px;
+	position: relative
+}
+
+#footer {
+	bottom: 90px;
+	position: absolute;
+	width: 100%
+}
+
+#ft_word {
+	background: url(imgs/t0168f8bc58417ad42b.png) no-repeat -280px 0;
+	bottom: 40px;
+	height: 0;
+	margin-left: -170px;
+	overflow: hidden;
+	padding-top: 16px;
+	width: 340px
+}
+
+#ft_word, #ft_control {
+	left: 50%;
+	position: absolute
+}
+
+#ft_control {
+	background: url(imgs/t0168f8bc58417ad42b.png) no-repeat -530px -50px;
+	bottom: 0;
+	height: 72px;
+	margin-left: -22px;
+	width: 45px
+}
+
+#main {
+	margin: auto;
+	padding-bottom: 200px;
+	width: 640px
+}
+
+#bd_logo {
+	padding: 250px 0 80px;
+	-webkit-transition: all .4s;
+	-moz-transition: all .4s;
+	-ms-transition: all .4s;
+	transition: all .4s
+}
+
+#bd_tabnav {
+	font-size: 16px;
+	line-height: 18px;
+	padding: 13px 0 14px;
+	-webkit-transition: all .4s;
+	-moz-transition: all .4s;
+	-ms-transition: all .4s;
+	transition: all .4s;
+	z-index: 10
+}
+
+#bd_tabnav, #so-nav-tabs-more {
+	position: relative
+}
+
+#so-nav-more {
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	display: none;
+	left: 516px;
+	padding: 0;
+	position: absolute;
+	text-align: left;
+	top: 35px;
+	width: 70px
+}
+
+#bd_search {
+	margin-bottom: 40px;
+	-webkit-transition: all .4s;
+	-moz-transition: all .4s;
+	-ms-transition: all .4s;
+	transition: all .4s
+}
+
+#input-container {
+	background: url(imgs/t0168f8bc58417ad42b.png) no-repeat 0 -50px;
+	border: none;
+	width: 521px;
+	z-index: 1
+}
+
+#input-container, #suggest-align {
+	height: 52px;
+	position: relative
+}
+
+#input {
+	background: transparent;
+	border: none;
+	color: #fff;
+	float: left;
+	font-size: 18px;
+	height: 24px;
+	line-height: 24px;
+	margin: 13px 0 0 12px;
+	outline: none;
+	width: 500px
+}
+
+#search-button {
+	background: #3eaf0e;
+	border: none;
+	border-radius: 0 2px 2px 0;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	height: 50px;
+	outline: none;
+	position: absolute;
+	right: -118px;
+	_right: -119px;
+	width: 118px
+}
+
+#ac_one {
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden
+}
+
+#bd_logo h1 {
+	background: url(imgs/t0111785dd55f1c93d4.png) no-repeat;
+	background-image: -webkit-image-set(url(imgs/t0111785dd55f1c93d4.png) 1x,
+		url(http://p3.qhimg.com/t0106a2d3df73b09160.png) 2x);
+	height: 0;
+	margin: 0 auto;
+	overflow: hidden;
+	padding-top: 72px;
+	width: 193px
+}
+
+#bd_tabnav a, #bd_tabnav strong {
+	color: #fff;
+	display: inline-block;
+	margin: 0 13px 0 12px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	vertical-align: top
+}
+
+#bd_tabnav>a {
+	border-bottom: 1px solid #fff;
+	text-decoration: none
+}
+
+#bd_tabnav>strong {
+	padding-top: 1px
+}
+
+#so-nav-more a {
+	border-top: 1px solid #eee;
+	color: #666;
+	display: block;
+	height: 44px;
+	line-height: 44px;
+	margin: auto;
+	padding: 0;
+	text-align: center;
+	width: 48px
+}
+
+#ac_one a {
+	color: #3eaf0e;
+	display: block;
+	height: 32px;
+	padding-left: 14px;
+	text-decoration: none;
+	white-space: nowrap
+}
+
+#ac_one img {
+	height: 16px;
+	margin-right: 5px;
+	vertical-align: middle
+}
+
+.ie6 #wrap {
+	height: 100%;
+	margin: auto;
+	width: 960px
+}
+
+#ft_control.use {
+	cursor: pointer
+}
+
+#ft_control.up {
+	background-position: -580px -50px
+}
+
+#ft_control.down {
+	background-position: -630px -50px
+}
+
+.ie6 #bd_tabnav, .ie7 #bd_tabnav {
+	zoom: 1
+}
+
+#so-nav-tabs-more .ico {
+	background: url(imgs/t0168f8bc58417ad42b.png) no-repeat -280px -20px;
+	height: 6px;
+	overflow: hidden;
+	position: absolute;
+	right: -13px;
+	top: 8px;
+	vertical-align: middle;
+	width: 10px
+}
+
+.ie6 #input-container {
+	background: url(http://p7.qhimg.com/t01b1e98915acdf662f.gif) no-repeat
+}
+
+#search-button.hover {
+	background: #53c920
+}
+
+#search-button.mousedown {
+	background: #3ca70f
+}
+
+.ie7 #bd_tabnav>a, .ie8 #bd_tabnav>a {
+	padding-bottom: 1px
+}
+
+.ie7 #bd_tabnav>strong, .ie8 #bd_tabnav>strong {
+	padding-top: 2px
+}
+
+#bd_tabnav>a:hover {
+	border-bottom: none
+}
+
+#ac_one.selected a {
+	background-color: rgba(0, 0, 0, 0.4)
+}
+
+#so-nav-more li:first-child a {
+	border-top: none
+}
+
+.ie6 #ac_one.selected a, .ie7 #ac_one.selected a, .ie8 #ac_one.selected a
+	{
+	background-color: #000
+}
+
+#ac_one b, #ac_one .site_url {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 16px;
+	height: 32px;
+	line-height: 32px;
+	vertical-align: middle
+}
+
+#ac_one .site_url {
+	margin-left: 15px
+}
+
+#ac_one .tag_site {
+	background: #6fb963;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	height: 16px;
+	line-height: 16px;
+	margin-left: 5px;
+	text-align: center;
+	vertical-align: middle;
+	width: 29px
+}
+
+@media screen and (max-height:888px) {
+	#bd_logo {
+		padding-top: 150px;
+		padding-bottom: 70px
+	}
+	#bd_search {
+		margin-bottom: 30px
+	}
+}
+
+@media ( max-height :728px) {
+	.ac_wrap {
+		font-size: 14px
+	}
+	.ac_wrap li {
+		line-height: 28px
+	}
+	#bd_logo {
+		padding-top: 130px;
+		padding-bottom: 50px
+	}
+	#bd_tabnav {
+		padding: 8px 0 9px
+	}
+	#so-nav-more {
+		top: 32px
+	}
+	#bd_search {
+		margin-bottom: 20px
+	}
+	#ac_one a, #ac_one b, #ac_one .site_url {
+		font-size: 14px;
+		height: 28px;
+		line-height: 28px
+	}
+}
+
+@media ( max-height :696px) {
+	#bd_logo {
+		padding-top: 80px;
+		padding-bottom: 35px
+	}
+	#bd_search {
+		margin-bottom: 15px
+	}
+}
+
+.less728 .ac_wrap, .less696 .ac_wrap {
+	font-size: 14px
+}
+
+.less728 .ac_wrap li, .less696 .ac_wrap li {
+	line-height: 28px
+}
+
+.less888 #bd_logo {
+	padding-top: 150px;
+	padding-bottom: 70px
+}
+
+.less888 #bd_search {
+	margin-bottom: 30px
+}
+
+.less728 #bd_logo {
+	padding-top: 130px;
+	padding-bottom: 50px
+}
+
+.less728 #bd_tabnav, .less696 #bd_tabnav {
+	padding: 8px 0 9px
+}
+
+.less728 #so-nav-more, .less696 #so-nav-more {
+	top: 32px
+}
+
+.less728 #bd_search {
+	margin-bottom: 20px
+}
+
+.less728 #ac_one a, .less728 #ac_one b, .less728 #ac_one .site_url,
+	.less696 #ac_one a, .less696 #ac_one b, .less696 #ac_one .site_url {
+	font-size: 14px;
+	height: 28px;
+	line-height: 28px
+}
+
+.less696 #bd_logo {
+	padding-top: 80px;
+	padding-bottom: 35px
+}
+
+.less696 #bd_search {
+	margin-bottom: 15px
+}
+</style>
+<!--[if lt IE 9 ]>
+<script>(function () {
+var e = "article,aside,footer,header,hgroup,nav,section,time".split(','),i = e.length;
+while (i--) {document.createElement(e[i])}
+})();</script>
+<style type="text/css" media="screen">article,aside,footer,header,hgroup,nav,section{
+display:block;
+}</style>
+<![endif]-->
+<!--[if lte IE 6]>
+<script type="text/javascript" src="http://s9.qhimg.com/static/11822cf70ba933dd/topic.pngfix.js" ></script>
+<script type="text/javascript">DD_belatedPNG.fix('.ico,.pngfix')</script>
+<![endif]-->
+<link rel="shortcut icon"
+	href="http://s0.qhimg.com/static/52166db8c450f68d.ico"
+	type="image/x-icon">
+<style>
+#bd_logo h1 {
+	background: url(imgs/t013fb9df302cf9de49.png) no-repeat;
+	background-image: -webkit-image-set(url(imgs/t013fb9df302cf9de49.png) 1x,
+		url(imgs/t0105395658a05e2235.png) 2x);
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="imgs/t013fb9df302cf9de49.png",
+		sizingMethod='crop');
+}
+</style>
+</head>
 <body>
-<h1>这是我使用github pages搭建的个人站点。</h1>
+	<canvas id="background"></canvas>
+	<canvas id="tmp" height="400" width="400"></canvas>
+	<div id="wrap">
+		<div id="main">
+			<section id="bd_logo">
+				<h1 class="pngfix" title="360学术">360学术</h1>
+			</section>
+			<section id="bd_tabnav">
+				<a href="http://sh.qihoo.com/?src=tab_xueshu" target="_self"
+					data-s="http://news.so.com/ns?ie=utf-8&tn=news&src=tab_xueshu&q=%q%"
+					data-linkid="news">新闻</a><a
+					href="http://www.so.com/?src=tab_xueshu" target="_self"
+					data-s="http://www.so.com/s?q=%q%&src=tab_xueshu" data-linkid="so">网页</a><a
+					href="http://wenda.so.com/?src=tab_xueshu" target="_self"
+					data-s="http://wenda.so.com/search/?ie=utf-8&q=%q%&src=tab_xueshu"
+					data-linkid="wenda">问答</a><a
+					href="http://video.so.com/?src=tab_xueshu" target="_self"
+					data-s="http://video.so.com/v?ie=utf-8&q=%q%&src=tab_xueshu"
+					data-linkid="video">视频</a><a
+					href="http://image.so.com/?src=tab_xueshu" target="_self"
+					data-s="http://image.so.com/i?src=www_home&ie=utf-8&q=%q%&src=tab_xueshu"
+					data-linkid="image">图片</a><a
+					href="http://music.so.com/?src=tab_xueshu" target="_self"
+					data-s="http://s.music.so.com/s?ie=utf-8&q=%q%&src=tab_xueshu"
+					data-linkid="music">音乐</a><a
+					href="http://map.so.com?src=tab_xueshu" target="_self"
+					data-s="http://map.so.com?ie=utf-8&t=map&k=%q%&src=tab_xueshu"
+					data-linkid="map">地图</a><strong>学术</strong><a
+					href="http://s.liangyi.com/?src=tab_xueshu" target="_self"
+					data-s="http://s.liangyi.com/s?q=%q%&src=tab_xueshu"
+					data-linkid="ly">良医</a><a href="javascript:void('tabnav-more');"
+					id="so-nav-tabs-more" onclick="return false">更多<span
+					class="ico"></span></a>
+				<nav id="so-nav-more" class="pngfix">
+					<ul class="pngfix">
+						<li class="pngfix"><a
+							href="http://baike.so.com/?src=tab_xueshu" target="_self"
+							data-s="http://baike.so.com/search?ie=utf-8&q=%q%&src=tab_xueshu"
+							data-linkid="baike">百科</a></li>
+						<li class="pngfix"><a
+							href="http://soft.so.com/?src=tab_xueshu" target="_self"
+							data-s="http://soft.so.com/search?ie=utf-8&q=%q%&src=tab_xueshu"
+							data-linkid="soft">软件</a></li>
+					</ul>
+				</nav>
+			</section>
+			<section id="bd_search">
+				<form action="/s" target="_self">
+					<fieldset id="input-container">
+						<input type="hidden" name="ie" value="utf-8"> <input
+							type="hidden" name="shb" value="1"> <input type="hidden"
+							name="src" id="from" value="360sou_home">
+						<div id="suggest-align">
+							<input type="text" name="q" id="input" suggestWidth="501px"
+								autocomplete="off" x-webkit-speech> <cite
+								id="suggest-tp"></cite> <input type="submit" id="search-button"
+								value="搜一下" onmouseover="this.className='hover'"
+								onmousedown="this.className='mousedown'"
+								onmouseout="this.className=''">
+						</div>
+					</fieldset>
+				</form>
+			</section>
+		</div>
+		<footer id="footer">
+			<section id="ft_word" class="pngfix">博观而约取 厚积而薄发</section>
+			<section id="ft_control" class="pngfix"></section>
+		</footer>
+	</div>
+
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	<script src="static/background.js"></script>
+	<!--<![endif]-->
+	<!--[if lt IE 9 ]>
+<script>(function () {
+	var bodySize=function(){
+		var html_h=document.documentElement.clientHeight,dbc=document.documentElement.className;
+		var last_class=/(?:^|\s*)less(\d+)(?:\s|$)/.exec(dbc),last_num=0;
+		if(last_class){
+			last_num=parseInt(last_class[1]);
+			dbc=dbc.replace(last_class[0],'');
+		}
+		if(html_h<694){
+			if(last_num!==696){
+				document.documentElement.className=dbc+' less696';
+			}
+		}else if(html_h<728){
+			if(last_num!==728){
+				document.documentElement.className=dbc+' less728';
+			}
+		}else if(html_h<888){
+			if(last_num!==888){
+				document.documentElement.className=dbc+' less888';
+			}
+		}else{
+			if(last_num!==0){
+				document.documentElement.className=dbc;
+			}
+		}
+	}
+	window.attachEvent('onresize',bodySize);
+	bodySize();
+})();</script>
+<![endif]-->
+	<script src="static/lib/183.js"></script>
+	<script src="static/monitor/4f1853e5.js"></script>
+	<!-- <script src="http://s4.qhimg.com/static/3fa4296c24c4b09d.js"></script> -->
+
+	<script src="static/index.js"></script>
 </body>
 </html>

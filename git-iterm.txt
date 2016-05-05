@@ -1,0 +1,17 @@
+/Users/masankin/Documents/git/masankin.github.io
+localhost:masankin.github.io masankin$ git add .
+localhost:masankin.github.io masankin$ git commit -m "更新index.html，编写博文测试"
+[master (root-commit) 7af9353] 更新index.html，编写博文测试
+ 1 file changed, 6 insertions(+)
+ create mode 100644 index.html
+localhost:masankin.github.io masankin$ git push
+Username for 'https://github.com': masankin
+Password for 'https://masankin@github.com':
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 344 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/masankin/masankin.github.io.git
+ * [new branch]      master -> master
+localhost:masankin.github.io masankin$
