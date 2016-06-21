@@ -278,7 +278,7 @@
         G = setTimeout(function() {
             j = !1,
             V()
-        }, 500)
+        }, 100)
     }
     ;
     t.addEventListener("mousewheel", Y),
