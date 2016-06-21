@@ -165,7 +165,7 @@
             R && !U.stop ? F = R(function() {
                 U.stop || (e(),
                 F = R(arguments.callee))
-            }) : F = setInterval(e, 17)
+            }) : F = setInterval(e, 5)
         },
         clear: function(e) {
             R ? U.stop = !0 : clearInterval(e)
